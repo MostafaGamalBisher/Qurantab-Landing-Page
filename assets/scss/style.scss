@@ -83,6 +83,12 @@ a {
     user-select: none;
     cursor: not-allowed;
   }
+
+  &:not(.card_button) {
+    @media (max-width: 600px) {
+      flex: 1;
+    }
+  }
 }
 /* End global*/
 
