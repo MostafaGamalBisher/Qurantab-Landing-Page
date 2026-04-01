@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "npm run build && git subtree split --prefix dist main -b gh-pages-deploy && git push origin gh-pages-deploy:gh-pages --force && git branch -D gh-pages-deploy",
+    "deploy": "npm run build && npx gh-pages -d dist",
     "preview": "vite preview",
     "lint": "eslint src/js/",
     "format": "prettier --write ."
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.1.0",
+    "gh-pages": "^6.3.0",
     "globals": "^17.4.0",
     "prettier": "^3.8.1",
     "sass": "^1.98.0",
