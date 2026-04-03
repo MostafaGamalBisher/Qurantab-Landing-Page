@@ -13,9 +13,14 @@
 
 .header {
   display: flex;
-  margin-top: var(--default-padding);
+  margin-top: 0 var(--default-padding);
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  padding: 20px;
+  z-index: 1;
+  top: 0;
+  background-color: white;
 
   @media (max-width: 600px) {
     font-size: 1.4rem;
@@ -58,6 +63,7 @@
   display: flex;
   gap: calc(var(--default-padding) * 2);
   align-items: center;
+  overflow: hidden;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -69,6 +75,7 @@
     flex-direction: column;
     gap: calc(var(--default-padding) / 2);
     flex: 1;
+    transition: all 1s ease-in-out;
   }
 
   &:nth-of-type(1) &_title {
@@ -99,6 +106,7 @@
     display: flex;
     flex: 1;
     justify-content: center;
+    transition: all 0.8s ease-in-out;
 
     @media (max-width: 600px) {
       order: -1;
@@ -169,6 +177,21 @@
       }
     }
   }
+}
+
+.section > div:nth-child(1) {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.section > div:nth-child(2) {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.section.fade-in > div {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .faq {
